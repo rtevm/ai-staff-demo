@@ -2,10 +2,10 @@ from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
-from app.core.config import settings
-from app.db.database import engine, Base
-from app.api.endpoints import agents
-from app.models import models
+from api.app.core.config import settings
+from api.app.db.database import engine, Base
+from api.app.api.endpoints import agents
+from api.app.models import models
 
 # Create database tables
 Base.metadata.create_all(bind=engine)

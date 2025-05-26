@@ -1,10 +1,10 @@
 from typing import List
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
-from app.db.database import get_db
-from app.models.models import AIAgent, Role, Domain, Team
-from app.schemas.schemas import AIAgent as AIAgentSchema, AIAgentCreate, AIAgentUpdate
-from app.services.ai_service import AIAgentService
+from api.app.db.database import get_db
+from api.app.models.models import AIAgent, Role, Domain, Team
+from api.app.schemas.schemas import AIAgent as AIAgentSchema, AIAgentCreate, AIAgentUpdate
+from api.app.services.ai_service import AIAgentService
 
 router = APIRouter()
 ai_service = AIAgentService()

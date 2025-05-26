@@ -1,6 +1,6 @@
 from typing import Dict, Any, List
 from openai import OpenAI
-from langchain.llms import OpenAI as LangChainOpenAI
+from langchain_openai import OpenAI as LangChainOpenAI
 from langchain.prompts import PromptTemplate
 from api.app.core.config import settings
 import json

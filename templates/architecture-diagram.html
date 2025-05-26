@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Staff Platform - Technical Architecture</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f4f2 100%);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle, rgba(0, 167, 157, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .architecture-container {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+        
+        .architecture-diagram {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .layer {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .component {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            min-width: 180px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .component:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: #00a79d;
+        }
+        
+        .component h3 {
+            margin: 0 0 10px 0;
+            color: #495057;
+            font-size: 1rem;
+        }
+        
+        .component p {
+            margin: 0;
+            font-size: 0.875rem;
+            color: #6c757d;
+        }
+        
+        .frontend-layer .component {
+            background: #e3f2fd;
+            border-color: #2196f3;
+        }
+        
+        .api-layer .component {
+            background: #f3e5f5;
+            border-color: #9c27b0;
+        }
+        
+        .business-layer .component {
+            background: #e8f5e9;
+            border-color: #4caf50;
+        }
+        
+        .data-layer .component {
+            background: #fff3e0;
+            border-color: #ff9800;
+        }
+        
+        .external-layer .component {
+            background: #fce4ec;
+            border-color: #e91e63;
+        }
+        
+        .connector {
+            position: absolute;
+            width: 2px;
+            background: #dee2e6;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .connector-vertical {
+            height: 40px;
+            top: -40px;
+        }
+        
+        .arrow {
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid #dee2e6;
+        }
+        
+        .layer-title {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            color: #495057;
+            font-size: 0.875rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+            justify-content: center;
+        }
+        
+        .tech-badge {
+            background: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            color: #495057;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .layer {
+                flex-direction: column;
+            }
+            
+            .layer-title {
+                position: static;
+                transform: none;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="architecture-container">
+        <h1>AI Staff Platform Technical Architecture</h1>
+        
+        <div class="architecture-diagram">
+            <!-- Frontend Layer -->
+            <div class="layer frontend-layer">
+                <span class="layer-title">Frontend Layer</span>
+                <div class="component">
+                    <h3>CEO Interface</h3>
+                    <p>Executive Chat UI</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">HTML5</span>
+                        <span class="tech-badge">Bootstrap</span>
+                        <span class="tech-badge">JavaScript</span>
+                    </div>
+                </div>
+                <div class="component">
+                    <h3>Dashboard</h3>
+                    <p>Management Console</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Responsive UI</span>
+                        <span class="tech-badge">Real-time Updates</span>
+                    </div>
+                </div>
+                <div class="component">
+                    <h3>Analytics</h3>
+                    <p>Performance Metrics</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Charts.js</span>
+                        <span class="tech-badge">WebSockets</span>
+                    </div>
+                </div>
+                <div class="connector connector-vertical">
+                    <div class="arrow"></div>
+                </div>
+            </div>
+            
+            <!-- API Layer -->
+            <div class="layer api-layer">
+                <span class="layer-title">API Gateway</span>
+                <div class="component">
+                    <h3>REST API</h3>
+                    <p>FastAPI Backend</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">FastAPI</span>
+                        <span class="tech-badge">Pydantic</span>
+                        <span class="tech-badge">JWT Auth</span>
+                    </div>
+                </div>
+                <div class="component">
+                    <h3>WebSocket Server</h3>
+                    <p>Real-time Communication</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Socket.IO</span>
+                        <span class="tech-badge">Redis Pub/Sub</span>
+                    </div>
+                </div>
+                <div class="component">
+                    <h3>GraphQL</h3>
+                    <p>Flexible Queries</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Strawberry</span>
+                        <span class="tech-badge">DataLoader</span>
+                    </div>
+                </div>
+                <div class="connector connector-vertical">
+                    <div class="arrow"></div>
+                </div>
+            </div>
+            
+            <!-- Business Logic Layer -->
+            <div class="layer business-layer">
+                <span class="layer-title">Business Logic</span>
+                <div class="component">
+                    <h3>CEO Orchestrator</h3>
+                    <p>Request Delegation</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">LangChain</span>
+                        <span class="tech-badge">Decision Engine</span>
+                    </div>
+                </div>
+                <div class="component">
+                    <h3>Agent Manager</h3>
+                    <p>Agent Lifecycle</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Agent Factory</span>
+                        <span class="tech-badge">State Machine</span>
+                    </div>
+                </div>
+                <div class="component">
+                    <h3>Task Executor</h3>
+                    <p>Work Distribution</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Celery</span>
+                        <span class="tech-badge">RabbitMQ</span>
+                    </div>
+                </div>
+                <div class="component">
+                    <h3>Governance Engine</h3>
+                    <p>Role Management</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">RBAC</span>
+                        <span class="tech-badge">Policy Engine</span>
+                    </div>
+                </div>
+                <div class="connector connector-vertical">
+                    <div class="arrow"></div>
+                </div>
+            </div>
+            
+            <!-- Data Layer -->
+            <div class="layer data-layer">
+                <span class="layer-title">Data Storage</span>
+                <div class="component">
+                    <h3>Primary Database</h3>
+                    <p>Operational Data</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">PostgreSQL</span>
+                        <span class="tech-badge">SQLAlchemy</span>
+                    </div>
+                </div>
+                <div class="component">
+                    <h3>Vector Store</h3>
+                    <p>Agent Memory</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Pinecone</span>
+                        <span class="tech-badge">Embeddings</span>
+                    </div>
+                </div>
+                <div class="component">
+                    <h3>Cache Layer</h3>
+                    <p>Performance</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Redis</span>
+                        <span class="tech-badge">Memcached</span>
+                    </div>
+                </div>
+                <div class="component">
+                    <h3>File Storage</h3>
+                    <p>Documents & Media</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">S3</span>
+                        <span class="tech-badge">CDN</span>
+                    </div>
+                </div>
+                <div class="connector connector-vertical">
+                    <div class="arrow"></div>
+                </div>
+            </div>
+            
+            <!-- External Services -->
+            <div class="layer external-layer">
+                <span class="layer-title">External Services</span>
+                <div class="component">
+                    <h3>AI Models</h3>
+                    <p>Intelligence Layer</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">OpenAI GPT-4</span>
+                        <span class="tech-badge">Claude</span>
+                        <span class="tech-badge">Custom Models</span>
+                    </div>
+                </div>
+                <div class="component">
+                    <h3>Integrations</h3>
+                    <p>Third-party APIs</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Slack</span>
+                        <span class="tech-badge">GitHub</span>
+                        <span class="tech-badge">Calendar</span>
+                    </div>
+                </div>
+                <div class="component">
+                    <h3>Monitoring</h3>
+                    <p>Observability</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Prometheus</span>
+                        <span class="tech-badge">Grafana</span>
+                        <span class="tech-badge">Sentry</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

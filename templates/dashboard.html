@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Staff Platform - Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="/static/css/dashboard.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-robot me-2"></i>AI Staff Platform
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#agents">Agents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#teams">Teams</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tasks">Tasks</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#settings">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#overview">
+                                <i class="fas fa-chart-pie"></i> Overview
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#agent-management">
+                                <i class="fas fa-users-cog"></i> Agent Management
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#team-structure">
+                                <i class="fas fa-sitemap"></i> Team Structure
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#governance">
+                                <i class="fas fa-balance-scale"></i> Governance
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#metrics">
+                                <i class="fas fa-analytics"></i> Metrics & Analytics
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">AI Staff Platform Dashboard</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="refreshDashboard()">
+                                <i class="fas fa-sync-alt"></i> Refresh
+                            </button>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-primary" onclick="showCreateAgentModal()">
+                            <i class="fas fa-plus"></i> Create Agent
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Overview Stats -->
+                <div id="overview-section">
+                    <div class="row mb-4">
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Active Agents
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="total-agents">
+                                                Loading...
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-robot fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Completed Tasks
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="completed-tasks">
+                                                Loading...
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-check-circle fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                Success Rate
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" id="success-rate">
+                                                        Loading...
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-chart-line fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Active Teams
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="active-teams">
+                                                Loading...
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agent Management Section -->
+                <div id="agent-management" class="mb-4">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">AI Agents</h6>
+                            <div class="dropdown no-arrow">
+                                <button class="btn btn-sm btn-primary" onclick="showCreateAgentModal()">
+                                    <i class="fas fa-plus"></i> Add Agent
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="agents-table" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Role</th>
+                                            <th>Domain</th>
+                                            <th>Team</th>
+                                            <th>Status</th>
+                                            <th>Performance</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="agents-table-body">
+                                        <tr>
+                                            <td colspan="7" class="text-center">Loading agents...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="row mb-4">
+                    <div class="col-lg-6">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Quick Actions</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="list-group">
+                                    <button class="list-group-item list-group-item-action" onclick="showCreateAgentModal()">
+                                        <i class="fas fa-robot text-primary"></i>
+                                        Create New AI Agent
+                                    </button>
+                                    <button class="list-group-item list-group-item-action" onclick="showCreateTeamModal()">
+                                        <i class="fas fa-users text-success"></i>
+                                        Set Up New Team
+                                    </button>
+                                    <button class="list-group-item list-group-item-action" onclick="showCreateProjectModal()">
+                                        <i class="fas fa-project-diagram text-info"></i>
+                                        Start New Project
+                                    </button>
+                                    <button class="list-group-item list-group-item-action" onclick="viewAnalytics()">
+                                        <i class="fas fa-chart-bar text-warning"></i>
+                                        View Analytics Dashboard
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Recent Activity</h6>
+                            </div>
+                            <div class="card-body">
+                                <div id="recent-activity">
+                                    <p class="text-muted">Loading recent activity...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Create Agent Modal -->
+    <div class="modal fade" id="createAgentModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create New AI Agent</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="createAgentForm">
+                        <div class="mb-3">
+                            <label for="agentName" class="form-label">Agent Name</label>
+                            <input type="text" class="form-control" id="agentName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="agentDescription" class="form-label">Description</label>
+                            <textarea class="form-control" id="agentDescription" rows="3"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="agentRole" class="form-label">Role</label>
+                                <select class="form-select" id="agentRole" required>
+                                    <option value="">Select Role...</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="agentDomain" class="form-label">Domain</label>
+                                <select class="form-select" id="agentDomain" required>
+                                    <option value="">Select Domain...</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="agentTeam" class="form-label">Team</label>
+                                <select class="form-select" id="agentTeam" required>
+                                    <option value="">Select Team...</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="createAgent()">Create Agent</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

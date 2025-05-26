@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Staff Platform - Transform Expertise into Autonomous Business Execution</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/landing.css') }}">
+</head>
+<body>
+    <!-- Sticky Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#hero">AI Staff Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Why</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#concept">What</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#platform">How</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#demo">Live Demo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#templates">Role Templates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#examples">Projects</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white ms-2" href="#quickstart">Quick Start</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - The "Why" -->
+    <section id="hero" class="hero-section">
+        <div class="shape-blob"></div>
+        <div class="shape-blob"></div>
+        <div class="shape-blob"></div>
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-3 fw-bold mb-4">One AI CEO to Run Your Entire Organization</h1>
+                    <p class="lead mb-5">Stop juggling multiple tools and platforms. Simply tell your AI CEO what you need, and watch as it mobilizes an entire organization to execute your vision.</p>
+                    
+                    <div class="ceo-concept-visual">
+                        <div class="user-card">
+                            <i class="bi bi-person-circle display-4"></i>
+                            <h4>You</h4>
+                            <p>The Visionary</p>
+                        </div>
+                        <div class="arrow-connector">
+                            <i class="bi bi-arrow-right display-4"></i>
+                        </div>
+                        <div class="ceo-card">
+                            <i class="bi bi-person-badge display-4"></i>
+                            <h4>AI CEO</h4>
+                            <p>Your Executive Interface</p>
+                        </div>
+                        <div class="arrow-connector">
+                            <i class="bi bi-arrow-right display-4"></i>
+                        </div>
+                        <div class="org-card">
+                            <i class="bi bi-building display-4"></i>
+                            <h4>24 Departments</h4>
+                            <p>156 Specialized AI Agents</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ceo-example mt-5 p-4 bg-light rounded">
+                        <h5 class="mb-3">Example Interaction:</h5>
+                        <div class="chat-preview">
+                            <div class="user-message">
+                                <strong>You:</strong> "I need to raise funding for our AI platform project. Focus on federal grants."
+                            </div>
+                            <div class="ceo-message">
+                                <strong>AI CEO:</strong> "Understood. I'm mobilizing our Grant Writing Department with 12 specialized agents. We've identified 5 federal opportunities totaling $4.4M. I'll have the first application ready in 72 hours and will update you hourly on progress."
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-5">
+                        <a href="/ceo-interface" class="btn btn-primary btn-lg me-3">Meet Your AI CEO</a>
+                        <a href="#ceo-demo" class="btn btn-outline-primary btn-lg">See CEO in Action</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Banner Section -->
+    <section class="photo-banner">
+        <img src="{{ url_for('static', path='/images/Collaboration.jpg') }}" alt="Team collaboration">
+        <div class="photo-overlay">
+            <div>
+                <h2 class="display-5 fw-bold">Human-Centered AI Operations</h2>
+                <p class="lead">Bringing together the best of human expertise and AI capabilities</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Concept Demo - The "What" -->
+    <section id="concept" class="concept-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">From Task Automation to Autonomous Business Operations</h2>
+                <p class="lead">Traditional automation handles tasks. We deploy AI teams that run your business.</p>
+            </div>
+            
+            <div class="comparison-interactive">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="comparison-card traditional">
+                            <h3 class="h4 mb-4"><i class="bi bi-gear"></i> Traditional Automation</h3>
+                            <div class="example-box">
+                                <p class="small text-muted">Example Task:</p>
+                                <p class="fw-bold">"Automate invoice processing"</p>
+                                <div class="result-preview">
+                                    <ul>
+                                        <li>Extracts data from invoices</li>
+                                        <li>Enters into accounting system</li>
+                                        <li>Sends payment reminders</li>
+                                    </ul>
+                                    <p class="text-danger mt-3"><i class="bi bi-x-circle"></i> Stops at task completion</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="comparison-card platform">
+                            <h3 class="h4 mb-4"><i class="bi bi-people"></i> AI Staff Platform</h3>
+                            <div class="example-box">
+                                <p class="small text-muted">Example Deployment:</p>
+                                <p class="fw-bold">"Deploy CFO Agent with full financial accountability"</p>
+                                <div class="result-preview">
+                                    <ul>
+                                        <li>Manages entire financial operations</li>
+                                        <li>Optimizes cash flow proactively</li>
+                                        <li>Negotiates with vendors</li>
+                                        <li>Reports to stakeholders</li>
+                                        <li>Plans financial strategy</li>
+                                    </ul>
+                                    <p class="text-success mt-3"><i class="bi bi-check-circle"></i> Continuous business management</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <button class="btn btn-primary" onclick="showMoreExamples()">See More Examples</button>
+            </div>
+            
+            <div id="moreExamples" class="more-examples mt-5" style="display: none;">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="example-card">
+                            <i class="bi bi-megaphone display-4 text-primary"></i>
+                            <h4 class="mt-3">Marketing Director Agent</h4>
+                            <p>Develops strategies, manages campaigns, analyzes metrics, and adjusts tactics autonomously</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="example-card">
+                            <i class="bi bi-pencil-square display-4 text-primary"></i>
+                            <h4 class="mt-3">Grant Writer Agent</h4>
+                            <p>Researches opportunities, writes applications, manages deadlines, and tracks success rates</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="example-card">
+                            <i class="bi bi-diagram-3 display-4 text-primary"></i>
+                            <h4 class="mt-3">Operations Manager Agent</h4>
+                            <p>Coordinates teams, optimizes workflows, handles logistics, and ensures smooth execution</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Architecture - The "How" -->
+    <section id="platform" class="platform-section py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Holacracy-Inspired Architecture for AI Governance</h2>
+                <p class="lead">Built on proven self-management principles, adapted for AI agent teams</p>
+            </div>
+            
+            <!-- Feature with Image -->
+            <div class="feature-with-image">
+                <div class="feature-image">
+                    <img src="{{ url_for('static', path='/images/Screenshot 2025-05-25 at 6.12.40 PM.png') }}" alt="Self-Management Operations Circle">
+                </div>
+                <div class="feature-content">
+                    <h3 class="h2">Self-Managing AI Teams</h3>
+                    <p>Our platform brings the proven Holacracy model to AI agent management, creating autonomous teams that operate with clear roles, accountabilities, and decision-making authority.</p>
+                    <ul class="feature-list">
+                        <li>Distributed authority across specialized agents</li>
+                        <li>Clear governance and decision protocols</li>
+                        <li>Continuous learning and adaptation</li>
+                        <li>Transparent operations and metrics</li>
+                    </ul>
+                    <a href="#architecture-deep-dive" class="btn btn-primary">Explore Architecture</a>
+                </div>
+            </div>
+            
+            <div class="architecture-visual">
+                <div class="architecture-layers">
+                    <div class="layer" data-layer="constitution">
+                        <div class="layer-header">
+                            <i class="bi bi-book"></i>
+                            <h3>Organizational Context</h3>
+                        </div>
+                        <div class="layer-content">
+                            <p>Holacracy constitution principles adapted for AI teams</p>
+                            <ul>
+                                <li>Clear governance structure</li>
+                                <li>Distributed authority</li>
+                                <li>Transparent decision-making</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="layer" data-layer="roles">
+                        <div class="layer-header">
+                            <i class="bi bi-person-badge"></i>
+                            <h3>Role Definition</h3>
+                        </div>
+                        <div class="layer-content">
+                            <div class="role-components">
+                                <div class="component">
+                                    <strong>Purpose</strong>
+                                    <p>Clear mission for each agent</p>
+                                </div>
+                                <div class="component">
+                                    <strong>Accountabilities</strong>
+                                    <p>Specific responsibilities</p>
+                                </div>
+                                <div class="component">
+                                    <strong>Domains</strong>
+                                    <p>Areas of authority</p>
+                                </div>
+                                <div class="component">
+                                    <strong>Policies</strong>
+                                    <p>Operating guidelines</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="layer" data-layer="projects">
+                        <div class="layer-header">
+                            <i class="bi bi-kanban"></i>
+                            <h3>Project Management</h3>
+                        </div>
+                        <div class="layer-content">
+                            <p>Long-term project execution capabilities</p>
+                            <ul>
+                                <li>Context retention across sessions</li>
+                                <li>Milestone tracking</li>
+                                <li>Adaptive planning</li>
+                                <li>Multi-agent coordination</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="layer" data-layer="governance">
+                        <div class="layer-header">
+                            <i class="bi bi-graph-up"></i>
+                            <h3>Governance & Metrics</h3>
+                        </div>
+                        <div class="layer-content">
+                            <p>Continuous improvement through measurement</p>
+                            <div class="metrics-grid">
+                                <div class="metric">Performance KPIs</div>
+                                <div class="metric">Decision Quality</div>
+                                <div class="metric">Goal Achievement</div>
+                                <div class="metric">ROI Tracking</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Live Agent Demo -->
+    <section id="demo" class="demo-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">See AI Agents in Action</h2>
+                <p class="lead">Watch real agents working on actual projects</p>
+            </div>
+            
+            <div class="demo-container">
+                <div class="demo-tabs">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#demo1">Marketing Campaign</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#demo2">Grant Application</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#demo3">Financial Analysis</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="tab-content mt-4">
+                    <div id="demo1" class="tab-pane fade show active">
+                        <div class="demo-window">
+                            <div class="demo-header">
+                                <span class="agent-name">Marketing Director Agent</span>
+                                <span class="status-badge">Active</span>
+                            </div>
+                            <div class="conversation-log">
+                                <div class="message agent">
+                                    <strong>Marketing Director:</strong> I've analyzed our LinkedIn engagement metrics for the past month. Our technical content performs 3x better than general updates. I'm pivoting our content strategy to focus on engineering insights and case studies.
+                                </div>
+                                <div class="message system">
+                                    <strong>System:</strong> New task created: "Develop technical content calendar for Q2"
+                                </div>
+                                <div class="message agent">
+                                    <strong>Marketing Director:</strong> I've created a 12-week content calendar with:
+                                    - 24 technical blog posts scheduled
+                                    - 48 LinkedIn posts queued
+                                    - 3 webinar topics identified
+                                    - Collaboration requests sent to engineering team
+                                </div>
+                                <div class="metrics-display">
+                                    <div class="metric-item">
+                                        <span class="metric-label">Engagement Rate</span>
+                                        <span class="metric-value">+47%</span>
+                                    </div>
+                                    <div class="metric-item">
+                                        <span class="metric-label">Lead Quality</span>
+                                        <span class="metric-value">+62%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="demo2" class="tab-pane fade">
+                        <div class="demo-window">
+                            <div class="demo-header">
+                                <span class="agent-name">Grant Writer Agent</span>
+                                <span class="status-badge">Working</span>
+                            </div>
+                            <div class="conversation-log">
+                                <div class="message agent">
+                                    <strong>Grant Writer:</strong> I've identified 3 CNP grant opportunities that match our innovation profile. The most promising is the Advanced Manufacturing Grant with a $250K cap.
+                                </div>
+                                <div class="message agent">
+                                    <strong>Grant Writer:</strong> I've completed the initial application draft:
+                                    - Executive summary emphasizing our AI-driven approach
+                                    - Detailed budget breakdown
+                                    - Impact metrics projections
+                                    - Required documentation checklist (70% complete)
+                                </div>
+                                <div class="message system">
+                                    <strong>System:</strong> Collaboration request from Finance Agent accepted
+                                </div>
+                                <div class="message agent">
+                                    <strong>Grant Writer:</strong> Working with Finance Agent to refine budget projections. We've identified cost savings that strengthen our application by 15%.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="demo3" class="tab-pane fade">
+                        <div class="demo-window">
+                            <div class="demo-header">
+                                <span class="agent-name">CFO Agent</span>
+                                <span class="status-badge">Analyzing</span>
+                            </div>
+                            <div class="conversation-log">
+                                <div class="message agent">
+                                    <strong>CFO Agent:</strong> Monthly financial analysis complete. Key findings:
+                                    - Burn rate decreased by 12% through automated vendor negotiations
+                                    - Cash runway extended by 2.5 months
+                                    - Identified $47K in potential tax credits
+                                </div>
+                                <div class="message agent">
+                                    <strong>CFO Agent:</strong> I've initiated proactive measures:
+                                    - Renegotiated 3 vendor contracts (saving $8K/month)
+                                    - Set up automated invoice processing
+                                    - Created dynamic cash flow forecasting model
+                                </div>
+                                <div class="dashboard-preview" style="padding: 2rem; background: #f8f9fa; border-radius: 10px; text-align: center;">
+                                    <i class="fas fa-chart-line fa-3x text-muted mb-3"></i>
+                                    <p class="text-muted">Dynamic financial dashboard with real-time metrics</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Role Templates Library -->
+    <section id="templates" class="templates-section py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Pre-Built Role Templates</h2>
+                <p class="lead">Start with proven agent configurations, customize to your needs</p>
+            </div>
+            
+            <div class="templates-grid">
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="template-card">
+                            <div class="template-icon">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+                            <h3 class="h5">Marketing Director</h3>
+                            <p class="small">Strategic marketing leadership with campaign management capabilities</p>
+                            <div class="accountabilities">
+                                <h6>Key Accountabilities:</h6>
+                                <ul class="small">
+                                    <li>Brand strategy development</li>
+                                    <li>Campaign execution</li>
+                                    <li>Performance analytics</li>
+                                    <li>Team coordination</li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-sm btn-primary" onclick="configureRole('marketing-director')">Configure</button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="template-card">
+                            <div class="template-icon">
+                                <i class="bi bi-clipboard-data"></i>
+                            </div>
+                            <h3 class="h5">Grant Writer</h3>
+                            <p class="small">Specialized in research funding and grant applications</p>
+                            <div class="accountabilities">
+                                <h6>Key Accountabilities:</h6>
+                                <ul class="small">
+                                    <li>Opportunity research</li>
+                                    <li>Application writing</li>
+                                    <li>Deadline management</li>
+                                    <li>Success tracking</li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-sm btn-primary" onclick="configureRole('grant-writer')">Configure</button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="template-card">
+                            <div class="template-icon">
+                                <i class="bi bi-gear-wide-connected"></i>
+                            </div>
+                            <h3 class="h5">Operations Manager</h3>
+                            <p class="small">Process optimization and team coordination specialist</p>
+                            <div class="accountabilities">
+                                <h6>Key Accountabilities:</h6>
+                                <ul class="small">
+                                    <li>Workflow optimization</li>
+                                    <li>Resource allocation</li>
+                                    <li>Quality assurance</li>
+                                    <li>Performance monitoring</li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-sm btn-primary" onclick="configureRole('operations-manager')">Configure</button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="template-card">
+                            <div class="template-icon">
+                                <i class="bi bi-currency-dollar"></i>
+                            </div>
+                            <h3 class="h5">CFO Agent</h3>
+                            <p class="small">Complete financial management and strategic planning</p>
+                            <div class="accountabilities">
+                                <h6>Key Accountabilities:</h6>
+                                <ul class="small">
+                                    <li>Financial strategy</li>
+                                    <li>Cash flow management</li>
+                                    <li>Vendor negotiations</li>
+                                    <li>Reporting & compliance</li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-sm btn-primary" onclick="configureRole('cfo')">Configure</button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="template-card">
+                            <div class="template-icon">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <h3 class="h5">HR Manager</h3>
+                            <p class="small">Human resources and talent management automation</p>
+                            <div class="accountabilities">
+                                <h6>Key Accountabilities:</h6>
+                                <ul class="small">
+                                    <li>Recruitment pipeline</li>
+                                    <li>Onboarding processes</li>
+                                    <li>Policy management</li>
+                                    <li>Team development</li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-sm btn-primary" onclick="configureRole('hr-manager')">Configure</button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="template-card custom">
+                            <div class="template-icon">
+                                <i class="bi bi-plus-circle"></i>
+                            </div>
+                            <h3 class="h5">Custom Role</h3>
+                            <p class="small">Build your own agent from scratch</p>
+                            <div class="custom-options">
+                                <p class="small text-muted">Define your own:</p>
+                                <ul class="small">
+                                    <li>Purpose & mission</li>
+                                    <li>Accountabilities</li>
+                                    <li>Domains & policies</li>
+                                    <li>Success metrics</li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary" onclick="createCustomRole()">Create Custom</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Dashboard Preview Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="dashboard-preview">
+                <div class="dashboard-header">
+                    <h3 class="h4 mb-0">AI Operations Dashboard</h3>
+                    <div>
+                        <span class="badge bg-success me-2">12 Agents Active</span>
+                        <span class="badge bg-info">98% Performance</span>
+                    </div>
+                </div>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">$247K</div>
+                        <div class="stat-label">Annual Savings</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3,847</div>
+                        <div class="stat-label">Tasks Automated</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">92%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Operations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Photo Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Human Expertise, AI Execution</h2>
+                <p class="lead">Our platform bridges the gap between your vision and operational excellence</p>
+            </div>
+            
+            <div class="photo-grid">
+                <div class="photo-card">
+                    <img src="{{ url_for('static', path='/images/Accountability.jpg') }}" alt="Accountability">
+                </div>
+                <div class="photo-card">
+                    <img src="{{ url_for('static', path='/images/Circle.jpg') }}" alt="Team Circle">
+                </div>
+                <div class="photo-card">
+                    <img src="{{ url_for('static', path='/images/Discussion.jpg') }}" alt="Team Discussion">
+                </div>
+                <div class="photo-card">
+                    <img src="{{ url_for('static', path='/images/Thought.jpg') }}" alt="Strategic Thinking">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Examples -->
+    <section id="examples" class="examples-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Real Projects, Real Results</h2>
+                <p class="lead">See how AI agent teams execute complex, long-term projects</p>
+            </div>
+            
+            <div class="project-examples">
+                <div class="project-card featured">
+                    <div class="project-header">
+                        <h3>LinkedIn Presence Transformation</h3>
+                        <span class="duration-badge">3-Month Project</span>
+                    </div>
+                    <div class="project-timeline">
+                        <div class="timeline-item completed">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h5>Month 1: Analysis & Strategy</h5>
+                                <p>Marketing Agent analyzed 500+ competitor profiles, identified content gaps, developed positioning strategy</p>
+                                <div class="results">
+                                    <span class="result-item"><i class="bi bi-check-circle"></i> 47 content themes identified</span>
+                                    <span class="result-item"><i class="bi bi-check-circle"></i> Brand voice defined</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item completed">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h5>Month 2: Content Production</h5>
+                                <p>Content team agents produced 120+ pieces of content, A/B tested formats, optimized posting times</p>
+                                <div class="results">
+                                    <span class="result-item"><i class="bi bi-graph-up"></i> 312% engagement increase</span>
+                                    <span class="result-item"><i class="bi bi-people"></i> 1,847 new followers</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item active">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h5>Month 3: Scale & Optimize</h5>
+                                <p>Automated engagement workflows, partnership outreach, thought leadership campaigns</p>
+                                <div class="results">
+                                    <span class="result-item"><i class="bi bi-trophy"></i> 5 speaking invitations</span>
+                                    <span class="result-item"><i class="bi bi-cash-stack"></i> 23 qualified leads</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <div class="project-card">
+                            <h4>CNP Grant Application Success</h4>
+                            <p>Grant Writer Agent secured $180K in research funding through systematic opportunity identification and application optimization</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">14</span>
+                                    <span class="metric-label">Applications submitted</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">71%</span>
+                                    <span class="metric-label">Success rate</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">$430K</span>
+                                    <span class="metric-label">Total secured</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="project-card">
+                            <h4>Financial Turnaround Project</h4>
+                            <p>CFO Agent reduced burn rate by 34% while maintaining growth through intelligent vendor management and process optimization</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">$127K</span>
+                                    <span class="metric-label">Annual savings</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">6.5mo</span>
+                                    <span class="metric-label">Runway extension</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">0</span>
+                                    <span class="metric-label">Service disruptions</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Circle Operations Visualization -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Distributed AI Operations</h2>
+                <p class="lead">Inspired by Holacracy's circle structure for maximum autonomy and efficiency</p>
+            </div>
+            
+            <div class="circle-layout">
+                <div class="central-circle">
+                    AI Operations Hub
+                </div>
+                <div class="circle-node" style="top: 10%; left: 50%; transform: translateX(-50%);">
+                    <i class="bi bi-graph-up"></i>
+                    <span>Marketing</span>
+                </div>
+                <div class="circle-node" style="top: 25%; right: 15%;">
+                    <i class="bi bi-currency-dollar"></i>
+                    <span>Finance</span>
+                </div>
+                <div class="circle-node" style="bottom: 25%; right: 15%;">
+                    <i class="bi bi-gear"></i>
+                    <span>Operations</span>
+                </div>
+                <div class="circle-node" style="bottom: 10%; left: 50%; transform: translateX(-50%);">
+                    <i class="bi bi-clipboard-data"></i>
+                    <span>Grants</span>
+                </div>
+                <div class="circle-node" style="bottom: 25%; left: 15%;">
+                    <i class="bi bi-people"></i>
+                    <span>HR</span>
+                </div>
+                <div class="circle-node" style="top: 25%; left: 15%;">
+                    <i class="bi bi-code-slash"></i>
+                    <span>Engineering</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Tools Section -->
+    <section id="tools" class="tools-section py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Try It Yourself</h2>
+                <p class="lead">Interactive tools to explore the platform's capabilities</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="tool-card">
+                        <i class="bi bi-sliders display-4 text-primary"></i>
+                        <h3 class="h5 mt-3">Role Configuration Tool</h3>
+                        <p>Design and test agent roles with our interactive builder</p>
+                        <button class="btn btn-primary" onclick="openRoleBuilder()">Open Builder</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="tool-card">
+                        <i class="bi bi-calculator display-4 text-primary"></i>
+                        <h3 class="h5 mt-3">ROI Calculator</h3>
+                        <p>Calculate potential savings and efficiency gains</p>
+                        <button class="btn btn-primary" onclick="openROICalculator()">Calculate ROI</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="tool-card">
+                        <i class="bi bi-diagram-2 display-4 text-primary"></i>
+                        <h3 class="h5 mt-3">Complexity Analyzer</h3>
+                        <p>Assess if your projects fit our platform</p>
+                        <button class="btn btn-primary" onclick="openComplexityAnalyzer()">Analyze Project</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">What Leaders Are Saying</h2>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-image">
+                                <img src="{{ url_for('static', path='/images/Discussion.jpg') }}" alt="Placeholder Person">
+                            </div>
+                            <div class="testimonial-author-info">
+                                <div class="testimonial-author-name">Jane Doe</div>
+                                <div class="testimonial-author-role">CEO, Example Corp</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <p>"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-image">
+                                <img src="{{ url_for('static', path='/images/Thought.jpg') }}" alt="Placeholder Person">
+                            </div>
+                            <div class="testimonial-author-info">
+                                <div class="testimonial-author-name">John Smith</div>
+                                <div class="testimonial-author-role">Director, Sample Industries</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Deep Dive -->
+    <section id="architecture-deep-dive" class="architecture-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Technical Architecture</h2>
+                <p class="lead">Built for scale, designed for extensibility</p>
+            </div>
+            
+            <!-- Self-Management Integration Feature -->
+            <div class="feature-with-image reverse mb-5">
+                <div class="feature-content">
+                    <h3 class="h2">Self-Management Integration</h3>
+                    <p>Seamlessly integrate with your existing Holacracy practice. Our AI agents understand and operate within your circle structure, respecting domains and accountabilities.</p>
+                    <ul class="feature-list">
+                        <li>Import roles directly from self-management tools</li>
+                        <li>Maintain governance alignment</li>
+                        <li>Automated tactical meetings</li>
+                        <li>Real-time synchronization</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <img src="{{ url_for('static', path='/images/Screenshot 2025-05-25 at 6.12.27 PM.png') }}" alt="Self-Management Integration">
+                </div>
+            </div>
+            
+            <div class="architecture-details">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="architecture-diagram mb-5">
+                            <iframe src="/architecture" width="100%" height="800" style="border: none; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);"></iframe>
+                            <div class="text-center mt-3">
+                                <a href="/architecture" target="_blank" class="btn btn-outline-primary">View Full Architecture</a>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-stack mt-5">
+                            <h3>Technology Stack</h3>
+                            <div class="row g-4 mt-3">
+                                <div class="col-md-6">
+                                    <div class="tech-category">
+                                        <h4 class="h6">Core Platform</h4>
+                                        <ul>
+                                            <li>FastAPI for high-performance API</li>
+                                            <li>SQLAlchemy for robust data modeling</li>
+                                            <li>Pydantic for data validation</li>
+                                            <li>JWT authentication</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="tech-category">
+                                        <h4 class="h6">AI Integration</h4>
+                                        <ul>
+                                            <li>OpenAI GPT-4 for agent intelligence</li>
+                                            <li>LangChain for agent orchestration</li>
+                                            <li>Vector databases for memory</li>
+                                            <li>Custom prompting framework</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="tech-category">
+                                        <h4 class="h6">Scalability</h4>
+                                        <ul>
+                                            <li>Horizontal scaling architecture</li>
+                                            <li>Message queue integration</li>
+                                            <li>Caching layer</li>
+                                            <li>Load balancing</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="tech-category">
+                                        <h4 class="h6">Extensibility</h4>
+                                        <ul>
+                                            <li>Plugin architecture</li>
+                                            <li>Webhook support</li>
+                                            <li>REST & GraphQL APIs</li>
+                                            <li>Custom agent templates</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-options mt-5">
+                            <h3>Integration Capabilities</h3>
+                            <div class="integrations-grid">
+                                <div class="integration-item">
+                                    <i class="bi bi-slack"></i>
+                                    <span>Slack</span>
+                                </div>
+                                <div class="integration-item">
+                                    <i class="bi bi-github"></i>
+                                    <span>GitHub</span>
+                                </div>
+                                <div class="integration-item">
+                                    <i class="bi bi-envelope"></i>
+                                    <span>Email</span>
+                                </div>
+                                <div class="integration-item">
+                                    <i class="bi bi-calendar3"></i>
+                                    <span>Calendar</span>
+                                </div>
+                                <div class="integration-item">
+                                    <i class="bi bi-database"></i>
+                                    <span>Databases</span>
+                                </div>
+                                <div class="integration-item">
+                                    <i class="bi bi-cloud"></i>
+                                    <span>Cloud APIs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA with Image -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="feature-with-image">
+                <div class="feature-image">
+                    <img src="{{ url_for('static', path='/images/Screenshot 2025-05-25 at 6.14.39 PM.png') }}" alt="Get Started">
+                </div>
+                <div class="feature-content text-center">
+                    <h2 class="display-5 fw-bold mb-4">Ready to Transform Your Operations?</h2>
+                    <p class="lead mb-4">Join forward-thinking organizations using AI to scale their expertise</p>
+                    <div class="d-flex gap-3 justify-content-center">
+                        <a href="/demo" class="btn btn-primary btn-lg">Start Free Trial</a>
+                        <a href="#contact" class="btn btn-outline-primary btn-lg">Book a Demo</a>
+                    </div>
+                    <p class="mt-3 text-muted">No credit card required • Setup in minutes • Cancel anytime</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section id="quickstart" class="quickstart-section py-5 bg-primary text-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Get Started in Minutes</h2>
+                <p class="lead">Three paths to transform your expertise into autonomous execution</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="quickstart-card">
+                        <div class="step-number">1</div>
+                        <h3 class="h4">Try the Demo</h3>
+                        <p>Experience pre-configured agents solving real business challenges</p>
+                        <a href="/demo" class="btn btn-light">Launch Demo</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="quickstart-card">
+                        <div class="step-number">2</div>
+                        <h3 class="h4">Configure Your First Agent</h3>
+                        <p>Use our templates to create an agent tailored to your needs</p>
+                        <a href="/dashboard" class="btn btn-light">Open Dashboard</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="quickstart-card">
+                        <div class="step-number">3</div>
+                        <h3 class="h4">Schedule a Consultation</h3>
+                        <p>Get expert guidance on building your AI team</p>
+                        <a href="#contact" class="btn btn-light">Book Call</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <p class="mb-0">Questions? Check our <a href="/docs" class="text-white text-decoration-underline">documentation</a> or <a href="#faq" class="text-white text-decoration-underline">FAQ</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 AI Staff Platform. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="/privacy" class="text-white me-3">Privacy</a>
+                    <a href="/terms" class="text-white me-3">Terms</a>
+                    <a href="/docs" class="text-white">Documentation</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="modal fade" id="roleBuilderModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Agent Role Builder</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Role builder interface will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="roiCalculatorModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">ROI Calculator</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- ROI calculator interface will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', path='/js/landing.js') }}"></script>
+</body>
+</html>
